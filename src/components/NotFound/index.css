@@ -1,0 +1,15 @@
+.not-found-main-box {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.not-found-main-image {
+  width: 400px;
+}
+@media screen and (max-width: 767px) {
+  .not-found-main-image {
+    width: 250px;
+  }
+}

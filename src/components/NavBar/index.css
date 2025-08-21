@@ -1,0 +1,104 @@
+.navbar-main-box {
+  height: 10vh;
+  background: #42404d;
+  font-family: 'Roboto';
+}
+.navbar-second-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 44px;
+  margin-right: 44px;
+}
+.navbar-tracker-heading {
+  flex: 1;
+  font-family: 'Roboto';
+  color: #ffbe38;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-second-box {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .navbar-tracker-heading {
+    font-size: 24px;
+  }
+}
+
+.navbar-ul-box {
+  padding-left: 0px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.navbar-link-text {
+  color: #cbd5e1;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar-logout-button {
+  height: 28px;
+  width: 90px;
+  color: #ffbe38;
+  border: 1px #ffbe38 solid;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.navbar-sm-logout-button {
+  height: 24px;
+  width: 70px;
+  color: #ffbe38;
+  border: 1px #ffbe38 solid;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.navbar-lg-view-box {
+  display: flex;
+  align-items: center;
+}
+.navbar-sm-view-box {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .navbar-lg-view-box {
+    display: none;
+  }
+  .navbar-sm-view-box {
+    display: block;
+  }
+}
+
+.navbar-gingerBread-button {
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.navbar-modal-content {
+  height: 100dvh;
+  width: 100dvw;
+  margin: 0px !important;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-slides/monthly-emojis-bg.png');
+  background-size: cover;
+  /* transform: none !important; */
+  padding: 0px;
+  border: none;
+}
+.navbar-sm-modal-header {
+  height: 10vh;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  align-items: center;
+  background: #42404d;
+}

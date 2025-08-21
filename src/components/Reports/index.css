@@ -1,0 +1,51 @@
+.reports-second-box {
+  height: 90vh;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+.reports-content-box {
+  max-height: calc(100%-40px);
+  width: 100%;
+  max-width: 900px;
+  color: white;
+  font-family: 'Roboto';
+}
+.reports-emoji-report-text {
+  font-size: 28px;
+  margin: 0px;
+}
+.reports-emoji-ul-item {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* gap: 14px; */
+}
+.reports-emoji-li-item {
+  width: 16%;
+  text-align: center;
+}
+.reports-bar-details-select-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reports-barChart-box {
+  height: 300px;
+}
+
+/* <select
+                value={currentMonth}
+                onChange={event => {
+                  setCurrentMonth(Number(event.target.value))
+                }}
+              >
+                {calenderList.map(item => (
+                  <option key={item.month} value={item.month}>
+                    {item.monthName}
+                  </option>
+                ))}
+              </select> */

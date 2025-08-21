@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+.login-main-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  color: white;
+  /* position: relative; */
+}
+.login-secondary-box {
+  /* height: 509px;
+  width: 797px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  border: 2.05px solid transparent;
+  background-image: linear-gradient(#72687536, #75747500);
+  border-image: linear-gradient(#13121247, #35333300); */
+  /* box-shadow: 0px 0px 10px ; */
+  width: 797px;
+  height: 509px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0deg);
+  opacity: 1;
+  top: 257px;
+  left: 321px;
+  border-radius: 27.29px;
+  border-width: 2.05px;
+  background: linear-gradient(
+    142.42deg,
+    rgba(114, 104, 117, 0.21) 1.79%,
+    rgba(117, 116, 117, 0) 100.42%
+  );
+  border: 2.05px solid;
+  border-image-source: linear-gradient(
+    139.28deg,
+    rgba(19, 18, 18, 0.28) 2.05%,
+    rgba(53, 51, 51, 0) 92.82%
+  );
+  backdrop-filter: blur(116px);
+  box-shadow:
+    6.82px 6.82px 16.37px 0px #51515166 inset,
+    -6.82px -6.82px 20.46px 0px #28262675 inset;
+  /* box-shadow: -6.82px -6.82px 20.46px 0px #28262675 inset; */
+}
+
+.login-mood-tracker-heading {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 0%;
+  margin-top: 0px;
+  /* font-style: Bold; */
+  /* leading-trim: NONE; */
+}
+
+@media screen and (max-width: 767px) {
+  .login-secondary-box {
+    width: 312px;
+    height: 420px;
+    top: 104px;
+    left: 24px;
+    transform: rotate(0deg);
+    opacity: 1;
+    border-radius: 27.29px;
+    border-width: 2.05px;
+    background: linear-gradient(
+      142.42deg,
+      rgba(114, 104, 117, 0.21) 1.79%,
+      rgba(117, 116, 117, 0) 100.42%
+    );
+    border: 2.05px solid;
+    border-image-source: linear-gradient(
+      139.28deg,
+      rgba(19, 18, 18, 0.28) 2.05%,
+      rgba(53, 51, 51, 0) 92.82%
+    );
+    backdrop-filter: blur(116px);
+    box-shadow:
+      6.82px 6.82px 16.37px 0px #51515166 inset,
+      -6.82px -6.82px 20.46px 0px #28262675 inset;
+    /* box-shadow: -6.82px -6.82px 20.46px 0px #28262675 inset; */
+  }
+
+  .login-mood-tracker-heading {
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    /* font-style: Bold; */
+    font-size: 24px;
+    /* leading-trim: NONE; */
+    line-height: 48px;
+    letter-spacing: 0%;
+  }
+}
+
+.login-username-input-box {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 64px;
+  margin-bottom: 14px;
+  /* opacity: 1;
+  top: 417px;
+  left: 539px; */
+}
+.login-username-label-text {
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 14px;
+}
+.login-username-input-field {
+  flex: 1;
+  width: 100%;
+  border-radius: 44px;
+  border: 1px white solid;
+  padding-left: 14px;
+}
+@media screen and (max-width: 767px) {
+  .login-username-input-box {
+    width: 280px;
+    height: 64px;
+  }
+  .login-username-label-text {
+    font-size: 12px;
+    line-height: 24px;
+    padding-left: 14px;
+  }
+  .login-username-input-field {
+    flex: 1;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px white solid;
+    padding-left: 14px;
+  }
+}
+
+.login-checkbox-box {
+  width: 360px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  /* cursor: pointer; */
+}
+.login-checkbox-field {
+  margin-right: 8px;
+  cursor: pointer;
+}
+.login-checkbox-label-text {
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .login-checkbox-box {
+    width: 280px;
+    height: 24px;
+  }
+  .login-checkbox-field {
+    margin-right: 4px;
+  }
+  .login-checkbox-label-text {
+    font-size: 14px;
+  }
+}
+
+.login-login-button {
+  width: 360px;
+  height: 40px;
+  background-color: #ffbe38;
+  color: #42404d;
+  margin-top: 34px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .login-login-button {
+    width: 280px;
+    height: 40px;
+    margin-top: 24px;
+  }
+}
+
+.login-error-msg-text {
+  width: 360px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ef4444;
+  text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .login-error-msg-text {
+    width: 280px;
+    font-size: 12px;
+  }
+}

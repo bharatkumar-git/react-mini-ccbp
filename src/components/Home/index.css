@@ -1,0 +1,234 @@
+.home-second-box {
+  min-height: 90vh;
+  padding: 40px;
+  overflow: auto;
+}
+.home-moods-heading {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 0%;
+  color: #ffbe38;
+  text-align: center;
+  margin-top: 0px;
+}
+@media screen and (max-width: 767px) {
+  .home-second-box {
+    padding: 24px;
+  }
+  .home-moods-heading {
+    display: none;
+  }
+}
+
+.home-flex-center-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-content-box {
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
+  width: 100%;
+  max-width: 900px;
+  max-height: 500px;
+  font-family: 'Roboto';
+  color: whitesmoke;
+}
+.home-calender-box {
+  width: 58%;
+  padding: 14px;
+  background-image: linear-gradient(#343243, #1c1a28);
+  border-radius: 14px;
+  backdrop-filter: blur(116px);
+  box-shadow:
+    6.82px 6.82px 16.37px 0px #51515166 inset,
+    -6.82px -6.82px 20.46px 0px #28262675 inset;
+}
+@media screen and (max-width: 767px) {
+  .home-content-box {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+  .home-calender-box {
+    width: 100%;
+    padding: 14px;
+    order: 2;
+  }
+}
+
+.home-emoji-count-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 38%;
+  height: 100%;
+}
+.home-emoji-box {
+  height: 48%;
+  background-image: linear-gradient(#343243, #1c1a28);
+  border-radius: 14px;
+  border: 1px #343243 solid;
+  padding: 14px;
+}
+.home-count-box {
+  height: 48%;
+  background-image: linear-gradient(#343243, #1c1a28);
+  border-radius: 14px;
+  border: 1px #343243 solid;
+  padding: 14px;
+}
+@media screen and (max-width: 767px) {
+  .home-emoji-count-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+  }
+  .home-emoji-box {
+    height: auto;
+    background-image: linear-gradient(#343243, #1c1a28);
+    border-radius: 14px;
+    border: 1px #343243 solid;
+    padding: 14px;
+    order: 1;
+  }
+  .home-count-box {
+    height: auto;
+    background-image: linear-gradient(#343243, #1c1a28);
+    border-radius: 14px;
+    border: 1px #343243 solid;
+    padding: 14px;
+    order: 3;
+  }
+}
+
+.home-calender-monthName-box {
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 14px;
+}
+.home-calender-next-prev-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 4px;
+  color: white;
+  font-size: 12px;
+}
+.home-calender-month-text {
+  color: white;
+  font-size: 16px;
+  flex: 1;
+  text-align: center;
+  margin: 0px;
+}
+
+.ul-paddingLeft-zero {
+  padding-left: 0px;
+  display: flex;
+  margin: 0px;
+}
+.home-calender-dates-ul-box {
+  flex-wrap: wrap;
+}
+.home-calender-dayName-li-item {
+  list-style-type: none;
+  flex: 1;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 14px;
+}
+.home-calender-dates-li-item {
+  list-style-type: none;
+  width: 14.28%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.home-calender-dates-li-button {
+  border: none;
+  background-color: #343243;
+  outline: none;
+  cursor: pointer;
+  width: 80%;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.home-calender-dates-emoji {
+  width: 18px;
+  height: 18px;
+  margin-left: 4px;
+}
+
+.home-emojiBox-ul-box {
+  height: calc(100% - 28px);
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+}
+.home-emojiBox-li-item {
+  list-style-type: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+.home-emojiBox-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+.home-emojiBox-emoji {
+  height: 30px;
+  width: 30px;
+}
+.home-emojiBox-emoji:hover {
+  transform: scale(1.1);
+}
+.home-emojiBox-selectedEmoji {
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
+  width: 50px;
+  height: 50px;
+}
+.background-transparent-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.home-countBox-main-box {
+  /* height: calc(100%-28px); */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-countBox-content-box {
+}
+.home-countBox-content-select-box {
+  display: flex;
+  justify-content: space-between;
+}
+.home-countBox-select-item {
+  width: 40%;
+}
+.home-countBox-count-heading {
+  color: white;
+  text-align: center;
+}
