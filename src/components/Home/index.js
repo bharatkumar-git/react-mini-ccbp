@@ -36,17 +36,17 @@ const Home = () => {
   // calender handlers
   const nextMonthIconHandler = () => {
     const activeMonthNumber = activeMonthId
-    let nextMonthNumber = activeMonthNumber + 1
+    const nextMonthNumber = activeMonthNumber + 1
     if (activeMonthNumber === 12) {
-      nextMonthNumber = 1
+      return
     }
     setActiveMonthId(nextMonthNumber)
   }
   const prevMonthIconHandler = () => {
     const activeMonthNumber = activeMonthId
-    let nextMonthNumber = activeMonthNumber - 1
+    const nextMonthNumber = activeMonthNumber - 1
     if (activeMonthNumber === 1) {
-      nextMonthNumber = 12
+      return
     }
     setActiveMonthId(nextMonthNumber)
   }
@@ -221,7 +221,7 @@ const Home = () => {
             </select>
           </div>
           <div>
-            <h1 className="home-countBox-count-heading">{renderCount}</h1>
+            <h1 className="home-countBox-count-heading">{`0${renderCount}`}</h1>
           </div>
         </div>
       </div>

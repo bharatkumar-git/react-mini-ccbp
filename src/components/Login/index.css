@@ -45,8 +45,7 @@
     rgba(53, 51, 51, 0) 92.82%
   );
   backdrop-filter: blur(116px);
-  box-shadow:
-    6.82px 6.82px 16.37px 0px #51515166 inset,
+  box-shadow: 6.82px 6.82px 16.37px 0px #51515166 inset,
     -6.82px -6.82px 20.46px 0px #28262675 inset;
   /* box-shadow: -6.82px -6.82px 20.46px 0px #28262675 inset; */
 }
@@ -84,8 +83,7 @@
       rgba(53, 51, 51, 0) 92.82%
     );
     backdrop-filter: blur(116px);
-    box-shadow:
-      6.82px 6.82px 16.37px 0px #51515166 inset,
+    box-shadow: 6.82px 6.82px 16.37px 0px #51515166 inset,
       -6.82px -6.82px 20.46px 0px #28262675 inset;
     /* box-shadow: -6.82px -6.82px 20.46px 0px #28262675 inset; */
   }
