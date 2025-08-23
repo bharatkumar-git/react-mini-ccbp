@@ -44,8 +44,7 @@
   background-image: linear-gradient(#343243, #1c1a28);
   border-radius: 14px;
   backdrop-filter: blur(116px);
-  box-shadow:
-    6.82px 6.82px 16.37px 0px #51515166 inset,
+  box-shadow: 6.82px 6.82px 16.37px 0px #51515166 inset,
     -6.82px -6.82px 20.46px 0px #28262675 inset;
 }
 @media screen and (max-width: 767px) {
