@@ -180,8 +180,10 @@ const Home = () => {
           .toLocaleDateString('en-US', {weekday: 'short'})
           .toLowerCase() === countSelectedDayObj.day.toLowerCase()
       ) {
-        if (item.emojiName === countSelectedEmojiObj.emojiName) {
-          count += 1
+        if (item.emojiName) {
+          if (item.emojiName === countSelectedEmojiObj.emojiName) {
+            count += 1
+          }
         }
       }
     })
