@@ -35,20 +35,20 @@ const Home = () => {
 
   // calender handlers
   const nextMonthIconHandler = () => {
-    const activeMonthNumber = activeMonthId
-    const nextMonthNumber = activeMonthNumber + 1
-    if (activeMonthNumber === 12) {
-      return
-    }
-    setActiveMonthId(nextMonthNumber)
+    setActiveMonthId(prevMonth => {
+      if (prevMonth < 12) {
+        return prevMonth + 1
+      }
+      return prevMonth
+    })
   }
   const prevMonthIconHandler = () => {
-    const activeMonthNumber = activeMonthId
-    const nextMonthNumber = activeMonthNumber - 1
-    if (activeMonthNumber === 1) {
-      return
-    }
-    setActiveMonthId(nextMonthNumber)
+    setActiveMonthId(prevMonth => {
+      if (prevMonth > 1) {
+        return prevMonth - 1
+      }
+      return prevMonth
+    })
   }
   const homeCalenderDateEmojiHandler = dateId => {
     setCalenderList(prev =>
