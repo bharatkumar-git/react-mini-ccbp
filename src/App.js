@@ -1,5 +1,5 @@
 import {Switch, Route} from 'react-router-dom'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 import AppContext from './context/AppContext'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -12,7 +12,6 @@ import './App.css'
 
 // #region - Use these lists in your code.
 
-// eslint-disable-next-line
 const daysList = [
   {
     id: '3639dd44-a5d5-11ec-b909-0242ac120002',
@@ -51,7 +50,6 @@ const daysList = [
   },
 ]
 
-// eslint-disable-next-line
 const initialMonthsList = [
   {
     month: 1,
@@ -2323,7 +2321,6 @@ const initialMonthsList = [
   },
 ]
 
-// eslint-disable-next-line
 const emojisList = [
   {
     id: '380e6284-a454-11ec-b909-0242ac120002',
@@ -2358,9 +2355,14 @@ const emojisList = [
 ]
 
 // #endregion
-
+const savedCalenderList = JSON.parse(localStorage.getItem('savedCalenderList'))
 const App = () => {
-  const [calenderList, setCalenderList] = useState(initialMonthsList)
+  const [calenderList, setCalenderList] = useState(
+    savedCalenderList === null ? initialMonthsList : savedCalenderList,
+  )
+  useEffect(() => {
+    localStorage.setItem('savedCalenderList', JSON.stringify(calenderList))
+  })
   return (
     <div className="app-main-box">
       <AppContext.Provider

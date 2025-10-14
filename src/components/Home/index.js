@@ -189,6 +189,20 @@ const Home = () => {
     })
     return count
   }
+  // const returnDayEmojiCount = () => {
+  //   let count = 0
+  //   activeMonth.dates.forEach(item => {
+  //     const dayNum = parseInt(item.date)
+  //     if (
+  //       dayNum % 7 === parseInt(countSelectedDayObj.dayNumber) && // like in class version
+  //       item.emojiName === countSelectedEmojiObj.emojiName
+  //     ) {
+  //       count += 1
+  //     }
+  //   })
+  //   return count
+  // }
+
   const renderCountBox = () => {
     const renderCount = returnDayEmojiCount()
     return (

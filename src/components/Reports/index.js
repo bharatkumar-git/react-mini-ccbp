@@ -1,5 +1,5 @@
 import {useContext, useState} from 'react'
-import {BarChart, Bar, XAxis, CartesianGrid} from 'recharts'
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid} from 'recharts'
 
 import NavBar from '../NavBar'
 import AppContext from '../../context/AppContext'
@@ -80,10 +80,9 @@ const Reports = () => {
       <div className="reports-second-box">
         <div className="reports-content-box">
           <div className="reports-face-details-box">
-            <h1 className="reports-emoji-report-text">
+            <h3 className="reports-emoji-report-text">
               Overall Emojis Reports
-            </h1>
-            <p className="reports-emoji-report-text">Overall Emojis Reports</p>
+            </h3>
             <ul className="reports-emoji-ul-item">
               {updatedEmojisList.map(item => (
                 <li key={item.id} className="reports-emoji-li-item">
@@ -98,13 +97,18 @@ const Reports = () => {
             <div className="reports-bar-details-select-box">
               <p>Monthly Reports</p>
               <select
+                className="reports-bar-details-select-element"
                 value={currentMonth}
                 onChange={event => {
                   setCurrentMonth(Number(event.target.value))
                 }}
               >
                 {calenderList.map(item => (
-                  <option key={item.month} value={item.month}>
+                  <option
+                    className="reports-bar-details-option-element"
+                    key={item.month}
+                    value={item.month}
+                  >
                     {item.monthName}
                   </option>
                 ))}
@@ -113,8 +117,14 @@ const Reports = () => {
             <div className="reports-barChart-box">
               <BarChart width={900} height={300} data={updatedEmojisList}>
                 <XAxis dataKey="emojiName" tick={<CustomTick />} />
+                <YAxis allowDecimals={false} />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                <Bar dataKey="emojiCount" fill="white" barSize="10%" />
+                <Bar
+                  dataKey="emojiCount"
+                  fill="#ffbe38"
+                  barSize={60}
+                  radius={[6, 6, 0, 0]}
+                />
               </BarChart>
             </div>
           </div>

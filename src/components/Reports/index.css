@@ -14,7 +14,7 @@
   font-family: 'Roboto';
 }
 .reports-emoji-report-text {
-  font-size: 28px;
+  /* font-size: 28px; */
   margin: 0px;
 }
 .reports-emoji-ul-item {
@@ -32,20 +32,16 @@
   display: flex;
   justify-content: space-between;
 }
+.reports-bar-details-select-element {
+  height: 34px;
+  cursor: pointer;
+  outline: none;
+}
+.reports-bar-details-option-element {
+  background-color: #4e4d4dda;
+  color: white;
+}
 
 .reports-barChart-box {
   height: 300px;
 }
-
-/* <select
-                value={currentMonth}
-                onChange={event => {
-                  setCurrentMonth(Number(event.target.value))
-                }}
-              >
-                {calenderList.map(item => (
-                  <option key={item.month} value={item.month}>
-                    {item.monthName}
-                  </option>
-                ))}
-              </select> */

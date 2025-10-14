@@ -44,7 +44,8 @@
   background-image: linear-gradient(#343243, #1c1a28);
   border-radius: 14px;
   backdrop-filter: blur(116px);
-  box-shadow: 6.82px 6.82px 16.37px 0px #51515166 inset,
+  box-shadow:
+    6.82px 6.82px 16.37px 0px #51515166 inset,
     -6.82px -6.82px 20.46px 0px #28262675 inset;
 }
 @media screen and (max-width: 767px) {
@@ -230,4 +231,105 @@
 .home-countBox-count-heading {
   color: white;
   text-align: center;
+}
+
+/* Dropdown styling to match the image exactly */
+.home-countBox-select-item {
+  width: 40%; /* Keeping your original width */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Dark background matching the container */
+  background-color: #2a2838;
+  background-image: linear-gradient(#343243, #2a2838);
+
+  color: #ffffff;
+  border: 1px solid #3d3b4a;
+  border-radius: 8px;
+  padding: 10px 32px 10px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  cursor: pointer;
+  outline: none;
+
+  transition: all 0.3s ease;
+
+  /* Custom dropdown arrow */
+  background-image: linear-gradient(#343243, #2a2838),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    center,
+    right 10px center;
+  background-size: auto, 16px;
+
+  /* Subtle shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.home-countBox-select-item:hover {
+  background-color: #343243;
+  border-color: #4a4858;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.home-countBox-select-item:focus {
+  border-color: #5a5868;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Dropdown options styling */
+.home-countBox-select-item option {
+  background-color: #2a2838;
+  color: #ffffff;
+  padding: 10px;
+  font-weight: 400;
+}
+
+/* Keep your original select box layout */
+.home-countBox-content-select-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Style for the count heading */
+.home-countBox-count-heading {
+  color: white;
+  text-align: center;
+  font-size: 72px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Mobile responsive - maintaining your existing breakpoint */
+@media screen and (max-width: 767px) {
+  .home-countBox-select-item {
+    width: 48%;
+    padding: 8px 28px 8px 10px;
+    font-size: 13px;
+    background-size: auto, 14px;
+  }
+
+  .home-countBox-count-heading {
+    font-size: 56px;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 480px) {
+  .home-countBox-select-item {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .home-countBox-content-select-box {
+    flex-direction: column;
+  }
+
+  .home-countBox-count-heading {
+    font-size: 48px;
+  }
 }
