@@ -44,8 +44,7 @@
   background-image: linear-gradient(#343243, #1c1a28);
   border-radius: 14px;
   backdrop-filter: blur(116px);
-  box-shadow:
-    6.82px 6.82px 16.37px 0px #51515166 inset,
+  box-shadow: 6.82px 6.82px 16.37px 0px #51515166 inset,
     -6.82px -6.82px 20.46px 0px #28262675 inset;
 }
 @media screen and (max-width: 767px) {
@@ -260,9 +259,7 @@
   background-image: linear-gradient(#343243, #2a2838),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat, no-repeat;
-  background-position:
-    center,
-    right 10px center;
+  background-position: center, right 10px center;
   background-size: auto, 16px;
 
   /* Subtle shadow */
