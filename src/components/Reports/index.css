@@ -1,20 +1,18 @@
 .reports-second-box {
   height: 90vh;
-  padding: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-block: 34px;
   overflow: auto;
 }
 .reports-content-box {
-  max-height: calc(100%-40px);
-  width: 100%;
-  max-width: 900px;
+  flex-shrink: 0;
+  height: 100%;
+  width: 80%;
   color: white;
   font-family: 'Roboto';
 }
 .reports-emoji-report-text {
-  /* font-size: 28px; */
   margin: 0px;
 }
 .reports-emoji-ul-item {
@@ -22,18 +20,50 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* gap: 14px; */
+  padding: 0px;
 }
 .reports-emoji-li-item {
   width: 16%;
   text-align: center;
+  background: linear-gradient(
+    145.12deg,
+    rgba(114, 104, 117, 0.21) 1.78%,
+    rgba(117, 116, 117, 0) 125.71%
+  );
+  border: 2.05px solid;
+  border-image-source: linear-gradient(
+    139.28deg,
+    rgba(90, 86, 86, 0.28) 2.05%,
+    rgba(0, 0, 0, 0) 92.82%
+  );
+  border-radius: 27.29px;
 }
+.reports-emoji-li-item > img {
+  width: 44px;
+  height: 44px;
+}
+@media (max-width: 767px) {
+  .reports-emoji-li-item {
+    width: 30%;
+    margin-bottom: 14px;
+    border: 1.05px solid;
+  }
+  .reports-emoji-li-item > p {
+    font-size: 12px;
+  }
+  .reports-emoji-li-item > img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .reports-bar-details-select-box {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .reports-bar-details-select-element {
-  height: 34px;
+  height: 24px;
   cursor: pointer;
   outline: none;
 }
@@ -41,7 +71,8 @@
   background-color: #4e4d4dda;
   color: white;
 }
-
 .reports-barChart-box {
-  height: 300px;
+  margin-inline: 0px;
+  margin-block: 24px;
+  padding: 0px;
 }

@@ -1,5 +1,12 @@
-import {useContext, useState} from 'react'
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid} from 'recharts'
+import {useContext, useState, useEffect} from 'react'
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+} from 'recharts'
 
 import NavBar from '../NavBar'
 import AppContext from '../../context/AppContext'
@@ -8,6 +15,8 @@ import './index.css'
 
 const Reports = () => {
   const {calenderList, emojisList} = useContext(AppContext)
+
+  const [barSize, setBarSize] = useState(60)
 
   const [currentMonth, setCurrentMonth] = useState(calenderList[0].month)
   const currentMonthObj = calenderList.find(
@@ -54,6 +63,7 @@ const Reports = () => {
     ...item,
     emojiCount: emojisCount[item.emojiName],
   }))
+
   const CustomTick = ({x, y, payload}) => {
     // payload.value will now be the emojiName
     const emoji = updatedEmojisList.find(
@@ -74,28 +84,41 @@ const Reports = () => {
     )
   }
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setBarSize(20)
+      } else {
+        setBarSize(60)
+      }
+    }
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <>
       <NavBar />
       <div className="reports-second-box">
         <div className="reports-content-box">
-          <div className="reports-face-details-box">
-            <h3 className="reports-emoji-report-text">
-              Overall Emojis Reports
-            </h3>
-            <ul className="reports-emoji-ul-item">
-              {updatedEmojisList.map(item => (
-                <li key={item.id} className="reports-emoji-li-item">
-                  <p>{item.emojiName}</p>
-                  <img src={item.emojiUrl} alt={item.emojiName} width="50px" />
-                  <p>{item.emojiCount}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h3 className="reports-emoji-report-text">Overall Emojis Reports</h3>
+          <ul className="reports-emoji-ul-item">
+            {updatedEmojisList.map(item => (
+              <li key={item.id} className="reports-emoji-li-item">
+                <p>{item.emojiName}</p>
+                <img src={item.emojiUrl} alt={item.emojiName} />
+                <p>{item.emojiCount}</p>
+              </li>
+            ))}
+          </ul>
           <div className="reports-bar-details-box">
             <div className="reports-bar-details-select-box">
-              <p>Monthly Reports</p>
+              <p style={{margin: '0px'}}>Monthly Reports</p>
               <select
                 className="reports-bar-details-select-element"
                 value={currentMonth}
@@ -114,19 +137,26 @@ const Reports = () => {
                 ))}
               </select>
             </div>
-            <div className="reports-barChart-box">
-              <BarChart width={900} height={300} data={updatedEmojisList}>
+            <ResponsiveContainer
+              className="reports-barChart-box"
+              height={300}
+              width="100%"
+            >
+              <BarChart
+                className="report-barchart-dimensions"
+                data={updatedEmojisList}
+              >
                 <XAxis dataKey="emojiName" tick={<CustomTick />} />
                 <YAxis allowDecimals={false} />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                 <Bar
                   dataKey="emojiCount"
                   fill="#ffbe38"
-                  barSize={60}
+                  barSize={barSize}
                   radius={[6, 6, 0, 0]}
                 />
               </BarChart>
-            </div>
+            </ResponsiveContainer>
           </div>
         </div>
       </div>

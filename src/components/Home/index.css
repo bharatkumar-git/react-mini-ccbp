@@ -44,7 +44,8 @@
   background-image: linear-gradient(#343243, #1c1a28);
   border-radius: 14px;
   backdrop-filter: blur(116px);
-  box-shadow: 6.82px 6.82px 16.37px 0px #51515166 inset,
+  box-shadow:
+    6.82px 6.82px 16.37px 0px #51515166 inset,
     -6.82px -6.82px 20.46px 0px #28262675 inset;
 }
 @media screen and (max-width: 767px) {
@@ -97,6 +98,7 @@
     border: 1px #343243 solid;
     padding: 14px;
     order: 1;
+    margin-bottom: 24px;
   }
   .home-count-box {
     height: auto;
@@ -105,6 +107,7 @@
     border: 1px #343243 solid;
     padding: 14px;
     order: 3;
+    margin-bottom: 24px;
   }
 }
 
@@ -131,6 +134,11 @@
   text-align: center;
   margin: 0px;
 }
+@media screen and (max-width: 767px) {
+  .home-calender-month-text {
+    font-size: 14px;
+  }
+}
 
 .ul-paddingLeft-zero {
   padding-left: 0px;
@@ -147,6 +155,12 @@
   color: whitesmoke;
   font-size: 14px;
 }
+@media screen and (max-width: 767px) {
+  .home-calender-dayName-li-item > p {
+    font-size: 12px;
+  }
+}
+
 .home-calender-dates-li-item {
   list-style-type: none;
   width: 14.28%;
@@ -167,43 +181,68 @@
   align-items: center;
   font-weight: 700;
 }
+.home-calender-dates-li-span {
+  font-size: 14px;
+}
 .home-calender-dates-emoji {
   width: 18px;
   height: 18px;
   margin-left: 4px;
 }
+@media screen and (max-width: 767px) {
+  .home-calender-dates-li-button {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+  }
+  .home-calender-dates-li-span {
+    font-size: 10px;
+  }
+  .home-calender-dates-emoji {
+    margin: 0px;
+    margin-top: 4px;
+    width: 12px;
+    height: 12px;
+  }
+}
 
 .home-emojiBox-ul-box {
-  height: calc(100% - 28px);
-  padding-left: 0px;
+  min-height: calc(100%);
+  padding: 0px;
+  margin: 0px;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  flex-shrink: 0;
 }
 .home-emojiBox-li-item {
   list-style-type: none;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 70%;
+  height: 100%;
 }
 .home-emojiBox-text {
-  font-size: 12px;
-  font-weight: 700;
+  margin: 0px;
+  margin-bottom: 8px;
+  font-size: 10px;
   color: white;
 }
 .home-emojiBox-emoji {
-  height: 30px;
-  width: 30px;
+  height: 34px;
+  width: 34px;
 }
 .home-emojiBox-emoji:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  transition: transform 0.3s linear;
 }
 .home-emojiBox-selectedEmoji {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
   width: 50px;
   height: 50px;
+  transition: height 0.3s;
 }
 .background-transparent-button {
   border: none;
@@ -212,121 +251,90 @@
   cursor: pointer;
 }
 .home-countBox-main-box {
-  /* height: calc(100%-28px); */
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .home-countBox-content-box {
+  padding-inline: 8px;
 }
 .home-countBox-content-select-box {
   display: flex;
   justify-content: space-between;
 }
 .home-countBox-select-item {
-  width: 40%;
+  width: 45%;
+  height: 34px;
+  position: relative;
 }
-.home-countBox-count-heading {
+.home-countBox-select-item > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: white;
-  text-align: center;
-}
-
-/* Dropdown styling to match the image exactly */
-.home-countBox-select-item {
-  width: 40%; /* Keeping your original width */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  /* Dark background matching the container */
-  background-color: #2a2838;
-  background-image: linear-gradient(#343243, #2a2838);
-
-  color: #ffffff;
-  border: 1px solid #3d3b4a;
   border-radius: 8px;
-  padding: 10px 32px 10px 12px;
+  background: #373644;
+  border: 1px solid #4e5d72;
+  box-shadow: 0px 1px 2px 0px #00000014;
+  padding: 4px 12px;
   font-size: 14px;
-  font-weight: 500;
-  font-family: 'Roboto';
-  cursor: pointer;
+}
+.home-countBox-select-item > div > button {
+  background-color: transparent;
+  border: none;
   outline: none;
-
-  transition: all 0.3s ease;
-
-  /* Custom dropdown arrow */
-  background-image: linear-gradient(#343243, #2a2838),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, right 10px center;
-  background-size: auto, 16px;
-
-  /* Subtle shadow */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  width: 24px;
+  padding-top: 4px;
+  margin: 0px;
 }
-
-.home-countBox-select-item:hover {
-  background-color: #343243;
-  border-color: #4a4858;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+.home-countBox-select-item > ul {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 4px;
+  list-style-type: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+  border: 1px solid #4e5c72;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px 0px #40495329;
+  background: #343243;
+  padding-inline: 4px;
+  padding-block: 14px;
 }
-
-.home-countBox-select-item:focus {
-  border-color: #5a5868;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+@media (max-width: 1024px) {
+  .home-countBox-select-item > div > span {
+    font-size: 12px;
+  }
 }
-
-/* Dropdown options styling */
-.home-countBox-select-item option {
-  background-color: #2a2838;
-  color: #ffffff;
-  padding: 10px;
-  font-weight: 400;
+@media (max-width: 767px) {
+  .home-countBox-select-item span {
+    font-size: 10px;
+  }
 }
-
-/* Keep your original select box layout */
-.home-countBox-content-select-box {
+.home-countBox-select-item > ul > li {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  align-items: center;
+  padding-block: 8px;
+  padding-inline: 6px;
+  border-radius: 12px;
 }
-
-/* Style for the count heading */
+.home-countBox-select-item > ul > li > span {
+  font-size: 14px;
+}
+.home-countBox-select-item > ul > li:hover {
+  background: #4e5c72;
+}
+.ticked {
+  color: #ffbe38;
+}
 .home-countBox-count-heading {
   color: white;
   text-align: center;
-  font-size: 72px;
-  font-weight: 700;
-  margin: 0;
-}
-
-/* Mobile responsive - maintaining your existing breakpoint */
-@media screen and (max-width: 767px) {
-  .home-countBox-select-item {
-    width: 48%;
-    padding: 8px 28px 8px 10px;
-    font-size: 13px;
-    background-size: auto, 14px;
-  }
-
-  .home-countBox-count-heading {
-    font-size: 56px;
-  }
-}
-
-/* Very small screens */
-@media screen and (max-width: 480px) {
-  .home-countBox-select-item {
-    width: 100%;
-    margin-bottom: 8px;
-  }
-
-  .home-countBox-content-select-box {
-    flex-direction: column;
-  }
-
-  .home-countBox-count-heading {
-    font-size: 48px;
-  }
 }

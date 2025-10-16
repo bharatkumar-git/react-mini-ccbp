@@ -22,7 +22,7 @@
     margin-right: 24px;
   }
   .navbar-tracker-heading {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -84,13 +84,12 @@
   cursor: pointer;
 }
 
-.navbar-modal-content {
+.popup-content {
   height: 100dvh;
   width: 100dvw;
   margin: 0px !important;
   background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-slides/monthly-emojis-bg.png');
   background-size: cover;
-  /* transform: none !important; */
   padding: 0px;
   border: none;
 }

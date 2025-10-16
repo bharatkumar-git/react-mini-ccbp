@@ -1,36 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 .login-main-box {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto';
   color: white;
-  /* position: relative; */
 }
 .login-secondary-box {
-  /* height: 509px;
-  width: 797px;
+  width: 60%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 14px;
-  border: 2.05px solid transparent;
-  background-image: linear-gradient(#72687536, #75747500);
-  border-image: linear-gradient(#13121247, #35333300); */
-  /* box-shadow: 0px 0px 10px ; */
-  width: 797px;
-  height: 509px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: rotate(0deg);
-  opacity: 1;
-  top: 257px;
-  left: 321px;
   border-radius: 27.29px;
   border-width: 2.05px;
   background: linear-gradient(
@@ -45,9 +29,9 @@
     rgba(53, 51, 51, 0) 92.82%
   );
   backdrop-filter: blur(116px);
-  box-shadow: 6.82px 6.82px 16.37px 0px #51515166 inset,
+  box-shadow:
+    6.82px 6.82px 16.37px 0px #51515166 inset,
     -6.82px -6.82px 20.46px 0px #28262675 inset;
-  /* box-shadow: -6.82px -6.82px 20.46px 0px #28262675 inset; */
 }
 
 .login-mood-tracker-heading {
@@ -57,8 +41,6 @@
   line-height: 48px;
   letter-spacing: 0%;
   margin-top: 0px;
-  /* font-style: Bold; */
-  /* leading-trim: NONE; */
 }
 
 @media screen and (max-width: 767px) {
@@ -83,9 +65,9 @@
       rgba(53, 51, 51, 0) 92.82%
     );
     backdrop-filter: blur(116px);
-    box-shadow: 6.82px 6.82px 16.37px 0px #51515166 inset,
+    box-shadow:
+      6.82px 6.82px 16.37px 0px #51515166 inset,
       -6.82px -6.82px 20.46px 0px #28262675 inset;
-    /* box-shadow: -6.82px -6.82px 20.46px 0px #28262675 inset; */
   }
 
   .login-mood-tracker-heading {

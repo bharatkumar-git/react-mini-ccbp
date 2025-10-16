@@ -1,5 +1,6 @@
 import {useContext, useState} from 'react'
 import {FaLessThan, FaGreaterThan} from 'react-icons/fa'
+import {IoIosArrowDown, IoIosArrowUp, IoMdCheckmark} from 'react-icons/io'
 
 import AppContext from '../../context/AppContext'
 import NavBar from '../NavBar'
@@ -30,6 +31,8 @@ const Home = () => {
   const countSelectedDayObj = daysList.find(
     dayItem => dayItem.id === countSelectedDayId,
   )
+  const [dropDownState, setDropdownState] = useState(false)
+  const [dayDropDownState, setDayDropDownState] = useState(false)
   const firstDay = new Date(2025, activeMonth.month - 1, 1).getDay()
   const daysInMonth = new Date(2025, activeMonth.month, 0).getDate()
 
@@ -121,7 +124,9 @@ const Home = () => {
                   className="home-calender-dates-li-button"
                   type="button"
                 >
-                  <p>{item.date}</p>
+                  <span className="home-calender-dates-li-span">
+                    {item.date}
+                  </span>
                   {item.emojiUrl.length === 0 ? (
                     ''
                   ) : (
@@ -209,32 +214,80 @@ const Home = () => {
       <div className="home-countBox-main-box">
         <div className="home-countBox-content-box">
           <div className="home-countBox-content-select-box">
-            <select
-              value={countSelectedEmojiId}
-              className="home-countBox-select-item"
-              onChange={event => {
-                setCountSelectedEmojiId(event.target.value)
-              }}
-            >
-              {emojisList.map(emojiItem => (
-                <option key={emojiItem.id} value={emojiItem.id}>
-                  {emojiItem.emojiName}
-                </option>
-              ))}
-            </select>
-            <select
-              value={countSelectedDayId}
-              className="home-countBox-select-item"
-              onChange={event => {
-                setCountSelectedDayId(event.target.value)
-              }}
-            >
-              {daysList.map(dayItem => (
-                <option key={dayItem.id} value={dayItem.id}>
-                  {dayItem.day}
-                </option>
-              ))}
-            </select>
+            <div className="home-countBox-select-item">
+              <div>
+                <span>{countSelectedEmojiObj.emojiName}</span>
+                <button
+                  aria-label="dropdown"
+                  type="button"
+                  onClick={() => setDropdownState(!dropDownState)}
+                >
+                  {dropDownState ? (
+                    <IoIosArrowUp color="white" size={16} />
+                  ) : (
+                    <IoIosArrowDown color="white" size={16} />
+                  )}
+                </button>
+              </div>
+              {dropDownState && (
+                <ul>
+                  {emojisList.map(item => {
+                    const isEmojiTicked = item.id === countSelectedEmojiId
+                    const tickStyling = isEmojiTicked ? 'ticked' : ''
+                    return (
+                      <li
+                        onClick={() => {
+                          setCountSelectedEmojiId(item.id)
+                        }}
+                        key={item.id}
+                      >
+                        <span className={tickStyling}>{item.emojiName}</span>
+                        {isEmojiTicked && (
+                          <IoMdCheckmark color="#ffbe38" size={16} />
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              )}
+            </div>
+            <div className="home-countBox-select-item">
+              <div>
+                <span>{countSelectedDayObj.day}</span>
+                <button
+                  aria-label="dropdown"
+                  type="button"
+                  onClick={() => setDayDropDownState(!dayDropDownState)}
+                >
+                  {dayDropDownState ? (
+                    <IoIosArrowUp color="white" size={16} />
+                  ) : (
+                    <IoIosArrowDown color="white" size={16} />
+                  )}
+                </button>
+              </div>
+              {dayDropDownState && (
+                <ul>
+                  {daysList.map(item => {
+                    const isEmojiTicked = item.id === countSelectedDayId
+                    const tickStyling = isEmojiTicked ? 'ticked' : ''
+                    return (
+                      <li
+                        onClick={() => {
+                          setCountSelectedDayId(item.id)
+                        }}
+                        key={item.id}
+                      >
+                        <span className={tickStyling}>{item.day}</span>
+                        {isEmojiTicked && (
+                          <IoMdCheckmark color="#ffbe38" size={16} />
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              )}
+            </div>
           </div>
           <div>
             <h1 className="home-countBox-count-heading">{`0${renderCount}`}</h1>
