@@ -84,6 +84,10 @@ const Login = props => {
             Show Password
           </label>
         </div>
+        <p className="login-note-text">
+          Note: use credentials - username: deepak and password: lightstar@1 for
+          testing the project
+        </p>
         <button className="login-login-button" type="submit">
           Login
         </button>
