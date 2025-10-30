@@ -192,7 +192,7 @@
   line-height: 18px;
   letter-spacing: 0.5px;
   font-weight: 300;
-  font-family: "Times New Roman";
+  font-family: 'Times New Roman';
 }
 @media screen and (max-width: 767px) {
   .login-note-text {
